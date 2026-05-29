@@ -45,3 +45,58 @@ Install dependencies:
 
 ```bash
 pip install -r requirements.txt
+```
+
+Run the backtest:
+
+```bash
+python src/backtest.py
+```
+
+## Performance Summary
+
+| Metric | Momentum Portfolio | SPY Benchmark |
+|---|---:|---:|
+| Total Return | 458.95% | 171.91% |
+| CAGR | 21.10% | 11.77% |
+| Volatility | 30.06% | 18.09% |
+| Sharpe Ratio | 0.79 | 0.71 |
+| Max Drawdown | -54.59% | -33.72% |
+| Calmar Ratio | 0.39 | 0.35 |
+
+The momentum portfolio achieved a higher total return and CAGR than the SPY benchmark. However, it also had higher volatility and a deeper maximum drawdown, meaning the strategy took more risk to generate higher returns.
+
+## Results
+
+### Equity Curve
+
+![Equity Curve](results/equity_curve.png)
+
+### Drawdown
+
+![Drawdown](results/drawdown.png)
+
+## Output Files
+
+The project generates:
+
+- `results/equity_curve.png`
+- `results/drawdown.png`
+- `results/weights.csv`
+- `results/backtest_results.csv`
+- `results/performance_report.csv`
+
+## Performance Metrics
+
+The project calculates:
+
+- Total Return
+- CAGR
+- Volatility
+- Sharpe Ratio
+- Maximum Drawdown
+- Calmar Ratio
+
+## Disclaimer
+
+This project is for educational purposes only. It is not financial advice.
