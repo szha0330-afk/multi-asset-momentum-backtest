@@ -3,7 +3,9 @@ import pandas as pd
 
 
 def calculate_drawdown(equity_curve: pd.Series) -> pd.Series:
-    running_max = equity_curve.cummax()
+    # Include the initial unit of capital as a peak (entry costs can
+    # otherwise be hidden if the first equity observation is below 1).
+    running_max = equity_curve.cummax().clip(lower=1.0)
     drawdown = equity_curve / running_max - 1
     return drawdown
 
